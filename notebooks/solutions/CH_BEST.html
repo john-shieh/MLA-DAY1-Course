@@ -1,0 +1,11 @@
+<html>
+<p style="padding: 10px; border: 1px solid black;">
+<img src="./../images/MLU-NEW-logo.png"  width="300" height=auto>
+<h3>There is no unique answer!</h3><br>
+<p style="padding: 10px; border: 1px solid black;">
+ The business problem defines how to balance the acceptable model performance (expressed by its score here) and the times involved in training and predicting (in general associated with costs and/or latency problems). So, a solution should balance these three dimensions: performance, training time and prediction time. <br><br>
+ The business problem defines the acceptable minimum performance and the cost in time to pay for that.
+ Looking at the leaderboard above, we need to balance the validation performance expressed in the column <b>score_val</b> against the prediction time expressed in the column <b>pred_time_val</b> (if latency is a limitation, as in real time prediction) or the training time, shown in the column <b>fit_time</b> (if the training time is a limitation. This is usually related to costs. For example, if you need to train a model for several days using expensive GPU machines).<br>
+ <br> As an example, in the output above, you can see that <b>WeightedEnsemble_L2</b> model has similar performance to <b>CatBoost</b>. 
+ However, <b>CatBoost</b> has significantly lower prediction time (`pred_time_val`). So, if latency is a problem here, <b>CatBoost</b> should be your choice.
+</html>

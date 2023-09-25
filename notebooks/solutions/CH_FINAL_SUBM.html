@@ -1,0 +1,15 @@
+<html>
+<p style="padding: 10px; border: 1px solid black;">
+<img src="./../images/MLU-NEW-logo.png"  width="300" height=auto>
+<h2>Copy and Paste this code to the code region above</h2>
+<code># save your predictions as a list
+enhanced_prediction = enhanced_predictor.predict(test_data_feateng)
+print(f"Price predictions (first 20 predictions): {enhanced_prediction[0:20]}")
+# define pandas columns
+df_enhanced_submission = pd.DataFrame(columns=["ID", "Price"])
+# Creating ID column from ID list
+df_enhanced_submission["ID"] = df_test["ID"].tolist()
+# Creating label column from price prediction list
+df_enhanced_submission["Price"] = enhanced_prediction
+# saving your csv file for Leaderboard submission
+df_enhanced_submission.to_csv("./../data/predictions/Enhanced_Prediction_to_Leaderboard.csv", index=False)</code>

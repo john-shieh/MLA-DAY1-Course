@@ -1,0 +1,19 @@
+<html>
+<p style="padding: 10px; border: 1px solid black;">
+<img src="./../images/MLU-NEW-logo.png"  width="300" height=auto> <br>
+<h3>Copy and Paste this code to the code region for the first cell above</h3>
+<p>
+<code>smaller_predictor.feature_importance(df_train_smaller)</code></p>
+<br>
+<h3>Copy and Paste this code to the code region for the second cell above</h3>
+<p>
+<code>feateng_predictor.feature_importance(train_data_feateng)</code></p>
+<br>
+<h3>Discussion</h3>
+Just looking at the relative position of the features, by comparing the original dataset and the one with the new engineered features, 
+we can observe that Synopsis, Title and Genre roughly keep the same position. They share the same information and this makes sense. 
+<br>
+For the new numerical features (Ratings-n & Reviews-n) that were derived from the original Ratings feature, seems that Autogluon gives more importance for the numerical version. 
+We can see that AutoGluon detects small changes related to feature importance, but these differences are not relevant as AutoGluon does a remarkable job extracting information from any kind of feature.
+This doesn't change the fact that feature engineering has a very important role improving machine learning results in general when you are not using an AutoML model, like AutoGluon.
+</html>

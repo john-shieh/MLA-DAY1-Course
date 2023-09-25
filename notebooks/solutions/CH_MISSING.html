@@ -1,0 +1,17 @@
+<html>
+<p style="padding: 10px; border: 1px solid black;">
+<img src="./../images/MLU-NEW-logo.png"  width="300" height=auto>
+<h2>Copy and Paste this code to the code region above</h2>
+<p>
+<code>print(f"Number of Missing values\n")
+print(f"month: {train_data_feateng[train_data_feateng['month']=='None'].shape[0]}")
+print(f"year: {train_data_feateng[train_data_feateng['year'].isnull()].shape[0]}")
+print(f"hard-paper: {train_data_feateng[train_data_feateng['hard-paper']=='None'].shape[0]}")
+print(f"Ratings-n: {train_data_feateng[train_data_feateng['Ratings-n'].isnull()].shape[0]}")
+print(f"Reviews-n: {train_data_feateng[train_data_feateng['Reviews-n'].isnull()].shape[0]}")</code></p>
+<h3>There are a few Missing Values</h3>
+ You always should look for missing values in your data during your Exploratory Data Analysis tasks (EDA).<br>
+ How to interpret and handle these missing values depends on the circumstances related to the business problem that the dataset represents and how the data was collected. 
+ Depending on this analysis we can drop missing values or imput them with new values. <br>
+ As EDA is not in the scope of this course and there are only a few missing values, we will just keep them.
+</html>

@@ -1,0 +1,18 @@
+<html>
+<p style="padding: 10px; border: 1px solid black;">
+<img src="./../images/MLU-NEW-logo.png"  width="300" height=auto> <br>
+
+<h3>Copy and Paste this code to the code region above</h3>
+<p>
+<code>train_data_feateng = df_train_smaller.copy()
+# CLEAN FEATURES
+train_data_feateng['Reviews-n'] = train_data_feateng['Reviews'].apply(first_num)
+train_data_feateng['Ratings-n'] = train_data_feateng['Ratings'].apply(first_num)
+train_data_feateng['hard-paper'] = train_data_feateng['Edition'].apply(lambda x : x.split(",")[0])
+train_data_feateng['year'] = train_data_feateng['Edition'].apply(year_get)
+train_data_feateng['month'] = train_data_feateng['Edition'].apply(month_get)
+# DROPPING ORIGINAL FEATURES
+train_data_feateng.drop(['Edition', 'Ratings', 'Reviews'], axis=1, inplace=True)
+</code></p>
+<br><br>
+</html>

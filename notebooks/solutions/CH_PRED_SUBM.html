@@ -1,0 +1,22 @@
+<html>
+<p style="padding: 10px; border: 1px solid black;">
+<img src="./../images/MLU-NEW-logo.png"  width="300" height=auto> <br>
+
+<h3>Copy and Paste this code to the codw region above</h3>
+<code># loading the test file again
+df_test_leaderboard = pd.read_csv("./datasets/Data_Test_Leaderboard.csv", sep=",")
+# making a prediction
+full_price_prediction = full_predictor.predict(df_test_leaderboard).to_list()
+# define pandas columns
+df_submission = pd.DataFrame(columns=["ID", "Price"])
+# Creating ID column from ID list
+df_submission["ID"] = df_test_leaderboard["ID"].tolist()
+# Creating label column from price prediction list
+df_submission["Price"] = full_price_prediction
+# saving your csv file for Leaderboard submission
+df_submission.to_csv("./datasets/Prediction_to_Leaderboard.csv", index=False)
+
+print('Double-check submission file against the original test file')
+sample_submission_df = pd.read_csv("./datasets/Data_Test_Leaderboard.csv", sep=",")
+print('Differences between project result IDs and sample submission IDs:',(sample_submission_df['ID'] != df_submission['ID']).sum())</code>
+</html>

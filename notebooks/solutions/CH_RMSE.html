@@ -1,0 +1,14 @@
+<html>
+<p style="padding: 10px; border: 1px solid black;">
+<img src="./../images/MLU-NEW-logo.png"  width="300" height=auto>
+<h3>This is a possible solution for this challenge. Copy and paste the code below into the cell above and run it.</h3>
+<code>
+	label = np.array([df_train['Price'][0],df_train['Price'][1],df_train['Price'][2]])
+	prediction = np.array([221.0,203.0,300.0])
+	difference_array = np.subtract(label, prediction)
+	squared_array = np.square(difference_array)
+	mse = squared_array.mean()
+	rmse = np.sqrt(mse)
+	rmse
+</code>
+</html>
